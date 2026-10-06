@@ -1,8 +1,20 @@
 # Proofs
 
-## P_Bi. A7 semimetal quantum topology
+## P_cell. Plate-2 coordinates close the A7 shells
 
-Given Lambda = (a, c, u) = (4.546, 11.862, 0.23389), G = R-3m (166).
+Given Lambda = (a, c, u) = (4.546, 11.862, 0.23389), hexagonal R-3m, 6 atoms.
+
+C1. Short shell is 3.071 A.
+C2. Long shell is 3.529 A.
+C3. Density from this cell is within 0.05 of 9.78 g/cm^3.
+C4. Melting sign is +271.4 C. The printed -271 C beside 544 K is a sign error.
+
+Run: python python/plate2_reconciliation_proof.py
+Record: records/p_cell_pass.json. PASS true.
+
+The ~3.4 A interlayer label is not this closure. The c-projection of the long bond is 2.359 A. The long bond itself is 3.529 A.
+
+## P_Bi. A7 semimetal quantum topology
 
 P1. Neighbor multiset under 4.2 A is two shells, d1 < d2, d2/d1 > 1.
 P2. spec(delta tau_z / 2) = {-delta/2, +delta/2}, delta = 40 meV.

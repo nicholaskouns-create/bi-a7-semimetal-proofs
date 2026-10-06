@@ -1,0 +1,11 @@
+{
+  "d1": 3.0711744755434816,
+  "d2": 3.529093362940372,
+  "density_g_cm3": 9.807503909774928,
+  "melting_C": 271.4,
+  "C1_short": true,
+  "C2_long": true,
+  "C3_density": true,
+  "C4_melting_sign": true,
+  "PASS": true
+}
