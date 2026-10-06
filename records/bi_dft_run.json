@@ -1,0 +1,16 @@
+{
+  "engine": "PySCF 2.14 PBC KRKS, PBE, LANL2DZ relativistic ECP",
+  "not": "Not Quantum ESPRESSO, not GPAW, not four-component SOC, not an L-point path",
+  "cell": "primitive 2-atom cell of plate-2 hexagonal R-3m; bonds locked before SCF",
+  "bonds_A": [3.0711744755434816, 3.529093362940373],
+  "nao": 10,
+  "nelectron": 10,
+  "converged": true,
+  "energy_Ha": -10.729183066510302,
+  "kmesh": [2, 2, 2],
+  "min_k_gap_meV": 22.091937131298344,
+  "max_k_gap_meV": 7688.498901827205,
+  "n_negative_gaps": 0,
+  "overlap_gate": "FAIL",
+  "overlap_note": "Acceptance asks for an L-point overlap within 10 meV of 40 meV. This mesh minimum gap is not that observable."
+}

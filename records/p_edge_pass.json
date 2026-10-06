@@ -1,0 +1,13 @@
+{
+  "title": "P_edge",
+  "S1_sign": true,
+  "S2_carriers": true,
+  "S3_overlap": true,
+  "S4_mass_flip": true,
+  "S5_mass_sign": true,
+  "S6_negative_mass": true,
+  "PASS": true,
+  "semiconductor_Eg_eV": 1.1,
+  "semimetal_Eg_eV": -0.04,
+  "semimetal_negative_mass": true
+}
