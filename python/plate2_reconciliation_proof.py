@@ -52,7 +52,7 @@ def main():
     d1 = float(s[np.abs(s - 3.071) < 0.01].mean())
     d2 = float(s[np.abs(s - 3.529) < 0.01].mean())
     volume = abs(np.dot(lat[:, 0], np.cross(lat[:, 1], lat[:, 2])))
-    density = (6 * 208.98040 / 6.02214076e23) / (volume * 1e-24)
+    density = float((6 * 208.98040 / 6.02214076e23) / (volume * 1e-24))
     cert = {
         "d1": d1,
         "d2": d2,
@@ -69,4 +69,4 @@ def main():
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(0 if main()["PASS"] else 1)
