@@ -3,11 +3,32 @@
   "S1_sign": true,
   "S2_carriers": true,
   "S3_overlap": true,
-  "S4_mass_flip": true,
-  "S5_mass_sign": true,
-  "S6_negative_mass": true,
-  "PASS": true,
-  "semiconductor_Eg_eV": 1.1,
-  "semimetal_Eg_eV": -0.04,
-  "semimetal_negative_mass": true
+  "S4_gap_sign_flip": true,
+  "S5_gap_sign": true,
+  "S6_negative_gap": true,
+  "cases": {
+    "semiconductor": {
+      "Ec_min_eV": 0.55,
+      "Ev_max_eV": -0.55,
+      "Eg_eV": 1.1,
+      "kind": "semiconductor",
+      "EF_eV": 0.0,
+      "n_e_T0": 0.0,
+      "n_h_T0": 0.0,
+      "n_300K_relative": 5.759790142391727e-10,
+      "gap_sign": 1.0
+    },
+    "semimetal": {
+      "Ec_min_eV": -0.02,
+      "Ev_max_eV": 0.02,
+      "Eg_eV": -0.04,
+      "kind": "semimetal",
+      "EF_eV": 0.0,
+      "n_e_T0": 0.02,
+      "n_h_T0": 0.02,
+      "n_300K_relative": 1.0,
+      "gap_sign": -1.0
+    }
+  },
+  "PASS": true
 }

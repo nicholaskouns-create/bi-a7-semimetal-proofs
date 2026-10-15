@@ -2,14 +2,14 @@
 """P_Bi: A7 semimetal quantum topology certificate.
 
 P1  neighbor shells of the plate-2 cell
-P2  spectrum of the L-point overlap block
+P2  spectrum of the T-L band-overlap block (indirect; the direct gap at L is 10-15 meV)
 P3  mass reversal flips the Berry phase; massless loop is pi
 """
 import json
 import numpy as np
 
 A, C, U = 4.546, 11.862, 0.23389
-DELTA_EV = 0.040  # overlap block, acceptance scale
+DELTA_EV = 0.040  # T-L band overlap, acceptance scale
 
 
 def plate2_cell():
@@ -97,9 +97,10 @@ def main():
         "P2": bool(np.allclose(np.sort(spec), [-DELTA_EV / 2, DELTA_EV / 2])),
         "P3": bool(np.isclose(g_plus, -g_minus) and abs(abs(g_massless) - np.pi) < 2e-3),
     }
+    cert["PASS"] = cert["P1"] and cert["P2"] and cert["P3"]
     print(json.dumps(cert, indent=2))
     return cert
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(0 if main()["PASS"] else 1)
