@@ -1,0 +1,19 @@
+{
+  "status": "bulk experimentally anchored; interface not calibrated",
+  "experimental": {"bulk_Tc_K":0.00053,"bulk_carrier_density_cm3":3e17},
+  "derived": {
+    "kF_single_spherical_pocket_m_inverse":206711964.92752138,
+    "effective_mass_sensitivity":[
+      {"mstar_over_me":0.01,"EF_meV":162.79397419230942},
+      {"mstar_over_me":0.05,"EF_meV":32.558794838461884},
+      {"mstar_over_me":0.1,"EF_meV":16.279397419230942},
+      {"mstar_over_me":1.0,"EF_meV":1.6279397419230942}
+    ],
+    "cutoff_sensitivity":[
+      {"cutoff_meV":0.1,"effective_dimensionless_lambda_to_reproduce_Tc":0.12801536040162435},
+      {"cutoff_meV":1,"effective_dimensionless_lambda_to_reproduce_Tc":0.09888917166254624},
+      {"cutoff_meV":10,"effective_dimensionless_lambda_to_reproduce_Tc":0.08053948609174952}
+    ]
+  },
+  "caveats":["Tc and density are measured bulk values, not specimen values","effective masses and cutoff values are sensitivity assumptions, not measurements of this specimen","single spherical pocket approximation is not the multivalley Bi band structure","weak-coupling formula is a phenomenological inversion; bismuth is nonadiabatic","no measured interface hopping, strain, alloy disorder, or Eliashberg spectral function supplied","cannot predict heterostructure Tc without independent interface data"]
+}
