@@ -1,0 +1,35 @@
+{
+  "experimental_constraints": {
+    "a_hex_A": 4.546,
+    "c_hex_A": 11.862,
+    "u": 0.23398,
+    "lambda_Bi_eV": 1.5,
+    "layer_spacing_proxy_A": 1.977,
+    "specimen_band_width_A": "not publicly quantified here",
+    "measured_interface_LDOS": "not available"
+  },
+  "assumptions": {
+    "p_only": true,
+    "third_neighbor_Liu_Allen_full_parameterization": false,
+    "hoppings_eV": [-0.32,-0.32,-0.22],
+    "interface_hopping_factor": 0.35,
+    "mu_reference_eV": 0,
+    "LDOS_gaussian_width_eV": 0.08,
+    "pairing_T_eV": 0.02,
+    "pairing_interaction": "separable toy model"
+  },
+  "results": {
+    "A7 Bi reference": {"interface_ldos_mu":0.03421172730691709,"pairing_chi_eV_inverse":0.8046178559684164,"critical_g_eV":1.2428260162143468,"interfaces":[0,1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23]},
+    "Ideal Bi Mg layered": {"interface_ldos_mu":0.17201418115896488,"pairing_chi_eV_inverse":1.091385917798608,"critical_g_eV":0.9162661160945187,"interfaces":[3,4,7,8,11,12,15,16,19,20]},
+    "BiPb MgZn geometry-constrained proxy": {"interface_ldos_mu":0.3173918141916251,"pairing_chi_eV_inverse":1.3903856610706345,"critical_g_eV":0.7192249760267944,"interfaces":[3,4,7,8,11,12,15,16,19,20]}
+  },
+  "checks": {
+    "Hermitian": true,
+    "SOC_spectrum_eV": [-1.5,-1.5,0.75,0.75,0.75,0.75],
+    "SOC_expected_eV": [-1.5,-1.5,0.75,0.75,0.75,0.75],
+    "SOC_time_reversal_residual": 0.0,
+    "unitary_propagation_residual": 1.2434497875801753e-15,
+    "wavefunction_norm": 0.9999999999999998,
+    "BdG_particle_hole_residual": 0.0
+  }
+}
