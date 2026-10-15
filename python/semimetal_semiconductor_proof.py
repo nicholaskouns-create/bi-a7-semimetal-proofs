@@ -1,9 +1,14 @@
 #!/usr/bin/env python3
-"""P_edge: semiconductor versus semimetal on one edge Hamiltonian.
+"""P_edge: semiconductor versus semimetal on the band edges.
 
 E_g = E_c_min - E_v_max
 semiconductor: E_g > 0, Fermi level in the gap, n(T=0) = 0
 semimetal:     E_g < 0, overlap delta = -E_g, both pockets occupied at T=0
+
+S4-S6 track the sign of E_g, so they restate S1. The sign of E_g is not a
+Dirac mass: an indirect overlap and a band inversion are independent
+(Bi2Se3 is inverted with a full gap). The mass-sign Berry flip is P3 in
+bi_topology_proof.py. See the erratum in PROOFS.md.
 """
 import json
 import numpy as np
@@ -29,24 +34,14 @@ def carriers_at_zero(ec_min, ev_max, ef, dos_c=1.0, dos_v=1.0):
 
 def thermal_n(eg, T, n0=1.0):
     if eg > 0:
-        return n0 * np.exp(-eg / (2 * K_B * T))
+        return float(n0 * np.exp(-eg / (2 * K_B * T)))
     return n0
 
 
-def berry_sign(m):
-    if m == 0:
-        raise ValueError("mass sign is undefined at m = 0")
-    return -1.0 if m < 0 else 1.0
-
-
-def check_mass_sign(m, expected):
-    got = berry_sign(m)
-    return got == expected, got
-
-
-def check_negative_mass(m):
-    got = berry_sign(m)
-    return got < 0, got
+def gap_sign(eg):
+    if eg == 0:
+        raise ValueError("gap sign is undefined at E_g = 0")
+    return -1.0 if eg < 0 else 1.0
 
 
 def main():
@@ -55,8 +50,6 @@ def main():
         eg, kind = edges(ec, ev)
         ef = fermi_for_intrinsic(ec, ev)
         ne, nh = carriers_at_zero(ec, ev, ef)
-        sign_ok, mass = check_mass_sign(eg, +1.0 if name == "semiconductor" else -1.0)
-        negative_ok, _ = check_negative_mass(eg) if name == "semimetal" else (None, None)
         rows[name] = {
             "Ec_min_eV": ec,
             "Ev_max_eV": ev,
@@ -66,24 +59,26 @@ def main():
             "n_e_T0": ne,
             "n_h_T0": nh,
             "n_300K_relative": thermal_n(eg, 300.0),
-            "mass_sign": mass,
-            "mass_sign_ok": sign_ok,
-            "negative_mass": negative_ok,
+            "gap_sign": gap_sign(eg),
         }
+    sc, sm = rows["semiconductor"], rows["semimetal"]
     cert = {
         "title": "P_edge",
-        "S1_sign": rows["semiconductor"]["Eg_eV"] > 0 and rows["semimetal"]["Eg_eV"] < 0,
-        "S2_carriers": rows["semiconductor"]["n_e_T0"] == 0 and rows["semimetal"]["n_e_T0"] > 0 and rows["semimetal"]["n_h_T0"] > 0,
-        "S3_overlap": abs(rows["semimetal"]["Eg_eV"] + 0.040) < 1e-12,
-        "S4_mass_flip": rows["semiconductor"]["mass_sign"] == -rows["semimetal"]["mass_sign"],
-        "S5_mass_sign": rows["semiconductor"]["mass_sign_ok"] and rows["semimetal"]["mass_sign_ok"],
-        "S6_negative_mass": rows["semimetal"]["negative_mass"] is True and rows["semiconductor"]["negative_mass"] is not True,
+        "S1_sign": sc["Eg_eV"] > 0 and sm["Eg_eV"] < 0,
+        "S2_carriers": sc["n_e_T0"] == 0 and sm["n_e_T0"] > 0 and sm["n_h_T0"] > 0,
+        "S3_overlap": abs(sm["Eg_eV"] + 0.040) < 1e-12,
+        "S4_gap_sign_flip": sc["gap_sign"] == -sm["gap_sign"],
+        "S5_gap_sign": sc["gap_sign"] == 1.0 and sm["gap_sign"] == -1.0,
+        "S6_negative_gap": sm["gap_sign"] < 0 and not sc["gap_sign"] < 0,
         "cases": rows,
     }
-    cert["PASS"] = all(cert[k] for k in ("S1_sign", "S2_carriers", "S3_overlap", "S4_mass_flip", "S5_mass_sign", "S6_negative_mass"))
+    cert["PASS"] = all(cert[k] for k in (
+        "S1_sign", "S2_carriers", "S3_overlap",
+        "S4_gap_sign_flip", "S5_gap_sign", "S6_negative_gap",
+    ))
     print(json.dumps(cert, indent=2))
     return cert
 
 
 if __name__ == "__main__":
-    main()
+    raise SystemExit(0 if main()["PASS"] else 1)
