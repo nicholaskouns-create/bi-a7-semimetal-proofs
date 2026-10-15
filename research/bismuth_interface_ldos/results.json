@@ -1,0 +1,13 @@
+{
+  "status": "computed phenomenological proxy; no measured interface LDOS dataset available",
+  "model": "48 sites, 4 states/site, 1D; not Liu-Allen sp3 or DFT; no actual specimen calibration",
+  "broadening": 0.065,
+  "T_model": 0.02,
+  "g_model": 0.45,
+  "results": {
+    "Bulk A7 proxy": {"interface_ldos_EF_per_orbital_model_energy":4.513035653179987e-07,"interior_ldos_EF_per_orbital_model_energy":4.513035653179987e-07,"interface_projected_pair_susceptibility":0.9045277339968615,"critical_g_model_units":1.1055493086372466,"pairing_eigenvalue_g_0.45":0.4070374802985877},
+    "Ideal Bi/Mg proxy": {"interface_ldos_EF_per_orbital_model_energy":0.02599737950809344,"interior_ldos_EF_per_orbital_model_energy":0.11421827011196693,"interface_projected_pair_susceptibility":0.8420938930317393,"critical_g_model_units":1.1875166623668576,"pairing_eigenvalue_g_0.45":0.3789422518642827},
+    "Disordered Bi-Pb/Mg-Zn proxy": {"interface_ldos_EF_per_orbital_model_energy":0.14331145240533164,"interior_ldos_EF_per_orbital_model_energy":0.14953536967571086,"interface_projected_pair_susceptibility":1.0766091946288843,"critical_g_model_units":0.9288419171267487,"pairing_eigenvalue_g_0.45":0.48447413758299794}
+  },
+  "experimental_constraints": {"ORNL":"EDS composition maps and TEM morphology, not energy-resolved interface LDOS","Bi_SOC_eV_literature":1.5}
+}
