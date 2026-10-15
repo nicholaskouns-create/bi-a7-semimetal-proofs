@@ -1,0 +1,6 @@
+INTERFACE LDOS EXECUTION PASS
+
+Computed layer-resolved LDOS for bulk A7 proxy, ideal Bi/Mg proxy, and disordered Bi-Pb/Mg-Zn proxy.
+Computed interface-projected pairing susceptibility and critical model coupling.
+Generated ldos.png locally during this pass.
+No measured interface LDOS dataset was supplied or discovered in this calculation; results remain model outputs.
