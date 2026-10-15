@@ -1,0 +1,8 @@
+PAIRING BOUNDARY EXECUTION PASS
+
+Temperatures and critical couplings written to results.json.
+Strain slice at T=0.02: -0.1, 0, +0.1.
+Disorder slice at T=0.02: 0, 0.5, 1.0, 1.5.
+Generated pairing_boundary.png locally during this pass.
+
+Note: Python emitted a SyntaxWarning for the string escape in the plot title (`$g\,\chi(T)=1$`); calculation completed successfully and numerical output is unaffected.
