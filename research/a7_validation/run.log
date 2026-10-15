@@ -1,0 +1,11 @@
+A7 SPIN-ORBIT / QUANTUM VALIDATION PASS
+
+Hermitian: PASS
+SOC multiplet spectrum: PASS [-1.5, -1.5, 0.75, 0.75, 0.75, 0.75] eV
+SOC time-reversal residual: 0.0
+Unitary propagation residual: 1.2434497875801753e-15
+Wavefunction norm after propagation: 0.9999999999999998
+BdG particle-hole residual: 0.0
+Generated layer_ldos.png locally during this pass.
+
+Evidence boundary: this validates the implemented p-orbital/SOC model and its numerical symmetries. It does not by itself establish a specimen-specific superconducting state.
