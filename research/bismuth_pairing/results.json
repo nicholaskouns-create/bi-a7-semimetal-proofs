@@ -1,0 +1,14 @@
+{
+  "model": "1D 48-site 192-state illustrative two-orbital spinful Hamiltonian; separable attraction; no physical calibration",
+  "boundary": "gcrit=1/mean(tanh(abs(eig)/(2T))/(2abs(eig)))",
+  "table": [
+    {"temperature":0.005,"critical_couplings":{"Bulk A7 Bi proxy":1.1105790752670884,"Ideal Bi/Mg proxy":1.0839022604435362,"Disordered Bi-Pb/Mg-Zn proxy":0.6668618591883654}},
+    {"temperature":0.02,"critical_couplings":{"Bulk A7 Bi proxy":1.1105791373343938,"Ideal Bi/Mg proxy":1.086700199670946,"Disordered Bi-Pb/Mg-Zn proxy":0.9063008223182683}},
+    {"temperature":0.05,"critical_couplings":{"Bulk A7 Bi proxy":1.1109882975023723,"Ideal Bi/Mg proxy":1.141376642735286,"Disordered Bi-Pb/Mg-Zn proxy":1.0531966897883097}},
+    {"temperature":0.1,"critical_couplings":{"Bulk A7 Bi proxy":1.140774900333761,"Ideal Bi/Mg proxy":1.2573055245992046,"Disordered Bi-Pb/Mg-Zn proxy":1.2097682147089346}}
+  ],
+  "slices_at_T_0.02": {
+    "strain": {"-0.1":1.0306751683164933,"0":0.9063008223182683,"0.1":0.8385936893696144},
+    "disorder": {"0":1.086700199670946,"0.5":1.0019540685705024,"1":0.9063008223182683,"1.5":0.8198298111455048}
+  }
+}
