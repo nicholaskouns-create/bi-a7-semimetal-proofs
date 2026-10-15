@@ -1,0 +1,8 @@
+MATERIAL CALIBRATION EXECUTION PASS
+
+Bulk Tc anchor: 0.53 mK
+Bulk carrier density anchor: 3e17 cm^-3
+Computed kF under a single-spherical-pocket approximation.
+Computed effective-mass Fermi-energy sensitivity.
+Computed weak-coupling lambda required to reproduce Tc for 0.1, 1, and 10 meV cutoffs.
+Generated calibration.png locally during this pass.
