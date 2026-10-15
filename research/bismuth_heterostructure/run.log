@@ -1,0 +1,26 @@
+{
+  "Bulk A7 Bi proxy": {
+    "finite_size_level_gap": 0.680000280873412,
+    "dos_at_fermi": 4.5130356531799865e-07,
+    "mean_near_fermi_ipr": 0.08288276773806341,
+    "mean_interface_weight": 0.3294506802903652,
+    "pairing_eigenvalue": 0.40519375672624125,
+    "pairing_threshold_reached": false
+  },
+  "Ideal Bi/Mg superlattice proxy": {
+    "finite_size_level_gap": 0.4442618653409106,
+    "dos_at_fermi": 0.07191194373901395,
+    "mean_near_fermi_ipr": 0.09213928254119724,
+    "mean_interface_weight": 0.22892842232126767,
+    "pairing_eigenvalue": 0.4140973847773968,
+    "pairing_threshold_reached": false
+  },
+  "Disordered Bi-Pb / Mg-Zn proxy": {
+    "finite_size_level_gap": 0.1975120234363051,
+    "dos_at_fermi": 0.1674603620268276,
+    "mean_near_fermi_ipr": 0.31352027867572546,
+    "mean_interface_weight": 0.3287428243065483,
+    "pairing_eigenvalue": 0.4965240778635456,
+    "pairing_threshold_reached": false
+  }
+}
