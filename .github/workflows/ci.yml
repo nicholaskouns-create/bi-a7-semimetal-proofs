@@ -9,6 +9,17 @@ permissions:
   contents: read
 
 jobs:
+  playground:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: '22'
+      - run: node --check app/app.js
+      - run: node --check app/model-data.js
+      - run: node --test app/tests/app.test.cjs
+
   certificates:
     runs-on: ubuntu-latest
     steps:
