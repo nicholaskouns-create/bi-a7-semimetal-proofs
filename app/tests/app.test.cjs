@@ -115,6 +115,8 @@ test('energy control bounds agree with exported domain; charts stay finite', () 
     get('#energy').oninput({ target: { value: String(e) } });
     assert.ok(!/NaN|Infinity/.test(get('#dos').innerHTML));
   }
+  get('#energy').oninput({ target: { value: '0' } });
+  assert.ok(Number(get('#dos-value').textContent) > 0, 'small Fermi DOS must not round to zero');
   assert.equal(vm.runInContext('ex(ENERGY_MIN)', context), 42);
   assert.equal(vm.runInContext('ex(ENERGY_MAX)', context), 483);
 });
