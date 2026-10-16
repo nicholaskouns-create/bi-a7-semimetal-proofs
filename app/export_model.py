@@ -1,4 +1,5 @@
 """Export browser data from the repository's original comparison Hamiltonian."""
+import ast
 import json
 from pathlib import Path
 
@@ -6,10 +7,16 @@ import numpy as np
 from scipy.linalg import eigh
 
 ROOT = Path(__file__).resolve().parents[1]
-# Reuse definitions without executing run.py's result-writing top-level loop.
+# Reuse imports and function definitions without running the output-writing loop.
 source = (ROOT / 'research/bismuth_heterostructure/run.py').read_text()
 namespace = {'__file__': str(ROOT / 'research/bismuth_heterostructure/run.py')}
-exec(source.split("names=['Bulk A7 Bi proxy'")[0], namespace)
+module = ast.parse(source)
+cutoff = next(i for i, node in enumerate(module.body)
+              if isinstance(node, ast.Assign)
+              and any(isinstance(target, ast.Name) and target.id == 'names'
+                      for target in node.targets))
+definitions = ast.Module(body=module.body[:cutoff], type_ignores=[])
+exec(compile(definitions, 'bismuth_heterostructure/run.py', 'exec'), namespace)
 grid = np.linspace(-2.3, 2.3, 650)
 models = []
 for kind in range(3):
