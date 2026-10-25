@@ -1,0 +1,28 @@
+name: Bismuth Lean and Coq formal checks
+on:
+  push:
+    paths:
+      - 'formal/**'
+      - '.github/workflows/formal-lean-coq.yml'
+  pull_request:
+    paths:
+      - 'formal/**'
+      - '.github/workflows/formal-lean-coq.yml'
+jobs:
+  lean:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: leanprover/lean-action@v1
+        with:
+          lean-version: '4.19.0'
+          build: false
+      - name: Compile Lean band-edge lemmas
+        run: lean formal/lean/BismuthBandEdge.lean
+  coq:
+    runs-on: ubuntu-latest
+    container: coqorg/coq:8.18.0
+    steps:
+      - uses: actions/checkout@v4
+      - name: Compile Coq band-edge lemmas
+        run: coqc formal/coq/BismuthBandEdge.v
