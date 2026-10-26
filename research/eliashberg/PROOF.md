@@ -1,7 +1,7 @@
 # Flat-Band Eliashberg Closure
 
 **First-principles validation of exciton-mediated pairing in a moiré flat band.**
-20 of 20 checks pass. Reproduce with `python3 -I research/eliashberg/eliashberg_first_principles.py`.
+23 of 23 checks pass. Reproduce with `python3 -I research/eliashberg/eliashberg_first_principles.py`.
 
 Every quantity is derived from CODATA constants and four anchored parameters
 (`N(0)`, `ω_ex`, `λ`, `μ*`). Nothing is asserted.

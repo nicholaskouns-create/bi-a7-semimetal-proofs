@@ -334,5 +334,5 @@ print(f"""
   T_c Allen-Dynes f1f2     {Tc_ad:.0f} K   ({100*(Tc_ad-Tc_numeric)/Tc_numeric:+.0f}%)
   weak-coupling ceiling    {Tc_weak:.0f} K at lambda = 0.9
   Casimir per pair, 5 nm   {casimir_per_pair_K(5e-9,n_s):.3g} K  (total vacuum energy)
-  Casimir entering T_c     suppressed by (Delta/w_p)^2 = {(Delta_gap/0.2)**2:.1e}
+  Casimir entering T_c     suppressed by (Delta/w_p)^2 = {(D_bcs/0.2)**2:.1e}
 """)
