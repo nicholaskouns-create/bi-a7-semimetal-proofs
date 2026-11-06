@@ -22,3 +22,5 @@ python research/a7_validation/validate.py
 ```
 
 Each proof script prints its certificate as JSON and exits nonzero if any statement fails. CI runs the original proof suite on every push and pull request. See `research/README.md` for the evidence boundary and reproduction notes for the newer simulations.
+
+[The E₄₇ spectral kernel · formalism and verification](app/e47-spectral-kernel/README.md)
