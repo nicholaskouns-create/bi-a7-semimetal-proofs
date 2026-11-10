@@ -1,5 +1,8 @@
 # bi-a7-semimetal-proofs
 
+> **Current licensing:** [All Rights Reserved](LICENSE) for original material owned by Nicholas Shane Kouns. No new reuse permission is granted. Previously granted licenses and third-party/public-domain rights remain unaffected.
+
+
 Python certificates for the bismuth A7 cell and the semiconductor/semimetal edge sign.
 
 - `python/plate2_reconciliation_proof.py` — C1–C4: cell shells, density, melting sign.
