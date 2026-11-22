@@ -32,3 +32,12 @@ python research/a7_validation/validate.py
 Each proof script prints its certificate as JSON and exits nonzero if any statement fails. CI runs the original proof suite on every push and pull request. See `research/README.md` for the evidence boundary and reproduction notes for the newer simulations.
 
 [The E₄₇ spectral kernel · formalism and verification](app/e47-spectral-kernel/README.md)
+
+
+<!-- FUN-WITH-EINSTEIN-2026 -->
+### 🪐 Fun With Einstein · Interactive spectral & quantum lab
+
+[Launch Fun With Einstein](https://nicholaskouns-create.github.io/fun-with-einstein/) · [Source & Python/Lean/Coq proof modules](https://github.com/nicholaskouns-create/E47-Kartekeya/tree/main/docs/fun-with-einstein) · [CI compiler status](https://github.com/nicholaskouns-create/E47-Kartekeya/actions/workflows/fun-with-einstein.yml).
+
+Fivefold C₅ eigenvalue ratio = φ⁻²; 125D Casimir E₄₇ projector; 250D quantum-ancilla probability α=47/(125φ²); stationary Einstein-equation recovery. Spectral simulation and gravitational statements have different evidence classes.
+<!-- /FUN-WITH-EINSTEIN-2026 -->
